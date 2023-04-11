@@ -42,14 +42,16 @@ public class Principal {
         System.out.println("Inclusão de Aluno:");
         System.out.print("Digite o RGM do aluno: ");
         String rgm = sc.next();
+        sc.nextLine(); // Consome o \n deixado pelo next()
         System.out.print("Digite o nome do aluno: ");
-        String nome = sc.next();
+        String nome = sc.nextLine();
         
         // Adiciona o novo aluno à lista de alunos
         lista.adicionarAluno(rgm, nome);
         
         System.out.println("Aluno adicionado com sucesso!");
     }
+
     
     public static void buscar(ListaAlunos lista, Scanner sc) {
         System.out.println("Busca de Aluno:");
@@ -72,7 +74,7 @@ public class Principal {
         System.out.println("Lista de Alunos:");
         for (int i = 0; i < rgms.length; i++) {
             String nome = lista.buscarAluno(rgms[i]);
-            System.out.println((i+1) + ". RGM: " + rgms[i] + " - Nome: " + nome);
+            System.out.println((i+1) + ". RGM: " + nome);
         }
     }
 
