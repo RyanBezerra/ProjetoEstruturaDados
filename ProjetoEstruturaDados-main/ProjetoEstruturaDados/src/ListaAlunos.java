@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
-public class ListaAlunos {
-    private ArrayList<String> alunos;
+    public class ListaAlunos {
+        private ArrayList<String> alunos;
 
-    public ListaAlunos() {
-        alunos = new ArrayList<String>();
-    }
+        public ListaAlunos() {
+            alunos = new ArrayList<String>(60);
+        }
+  
 
     public void adicionarAluno(String rgm, String nome) {
         String aluno = rgm + " - " + nome;
