@@ -47,7 +47,7 @@ public class Principal {
         String nome = sc.nextLine();
         
         // Adiciona o novo aluno à lista de alunos
-        lista.adicionarAluno(rgm, nome);
+        lista.adicionarAlunoOrdenado(rgm, nome);
         
         System.out.println("\nAluno adicionado com sucesso!\n");
     }
@@ -64,7 +64,7 @@ public class Principal {
         if (nome != null) {
             System.out.println("\nAluno encontrado: \n" + nome);
         } else {
-            System.out.println("\nAluno não encontrado!\n");
+            System.out.println("\nAluno não existe!\n");
         }
     }
     

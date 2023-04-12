@@ -7,12 +7,20 @@ public class ListaAlunos {
         tamanho = 0;
     }
 
-    public void adicionarAluno(String rgm, String nome) {
+    public void adicionarAlunoOrdenado(String rgm, String nome) {
         String aluno = rgm + " - " + nome;
-        alunos[tamanho] = aluno;
+        int i;
+        for (i = tamanho - 1; i >= 0; i--) {
+            String rgmAluno = alunos[i].split(" - ")[0];
+            if (rgmAluno.compareTo(rgm) > 0) {
+                alunos[i + 1] = alunos[i];
+            } else {
+                break;
+            }
+        }
+        alunos[i + 1] = aluno;
         tamanho++;
     }
-
     public String buscarAluno(String rgm) {
         for (int i = 0; i < tamanho; i++) {
             String aluno = alunos[i];
